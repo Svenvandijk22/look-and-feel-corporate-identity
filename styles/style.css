@@ -1,0 +1,33 @@
+
+.navigatie{
+
+    background-color: #B4BDD0;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 30px;
+    height: 150px;
+
+
+}
+
+
+.navigatie ul{
+
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+.navigatie a{
+
+    text-decoration: none;
+}
+
+.laatsteNieuws{
+
+background-color:#333467 ;
+
+}
