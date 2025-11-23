@@ -1,11 +1,11 @@
 .navigatie {
-    display:flex;
+    display: flex;
     background-color: #B4BDD0;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 30px;
     height: 150px;
-     align-items: center;
+    align-items: center;
 
 
 }
@@ -15,10 +15,10 @@
     height: 50px;
     margin-bottom: 40px;
     margin-left: 20px;
-   
+
 }
 
-.linksNav{
+.linksNav {
     display: flex;
 
     flex-direction: column;
@@ -75,16 +75,16 @@
     background: #8da24a;
     color: white;
     padding: 7px 19px;
-    font-size: 19px ;
+    font-size: 19px;
     font-family: Arial, Helvetica, sans-serif;
     display: inline-block;
     margin-bottom: 20px;
     margin-right: 50px;
-    
+
 }
 
 .locatie-label-oost {
-   
+
     margin-top: 10px;
     font-family: Arial;
     background-color: #8EA34B;
@@ -96,6 +96,27 @@
     /* Binnenruimte */
     border-radius: 2px;
     display: inline-block;
+    margin-right: 8px;
+    /* Ruimte tussen label en titeltekst */
+    vertical-align: middle;
+    /* Lijnt netjes uit naast de titel */
+}
+
+.locatie-label-Zuid-oost {
+
+    margin-top: 10px;
+    font-family: Arial;
+    background-color: #085B64;
+    color: white;
+    text-transform: lowercase;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 4px 12px;
+    /* Binnenruimte */
+    border-radius: 2px;
+    /* Kleine hoekafronding */
+    display: inline-block;
+    /* Zorgt dat het blokje de juiste maat heeft */
     margin-right: 8px;
     /* Ruimte tussen label en titeltekst */
     vertical-align: middle;
@@ -124,16 +145,22 @@
 
 }
 
-.tekst{
+.tekst {
     color: white;
     font-size: 15px;
     line-height: 1.4rem;
 
 }
 
+.tekstPaarsblauw {
+
+    color: var(--paarsBlauw);
+    font-size: 15px;
+    line-height: 1.4rem;
+}
 
 .lees-meer_wit {
-   
+
     font-family: arial;
     display: inline-flex;
     /* tekst + pijl netjes naast elkaar */
@@ -150,8 +177,8 @@
 }
 
 .lees-meer_wit:hover {
-    color:  white;
-    
+    color: white;
+
     /*eerst had ik een oranje accentkleur toegevoegd wat niet werkte kwa color contrast*/
 }
 
@@ -168,13 +195,93 @@
 }
 
 
-.nieuwe_look_section {
+
+.lees-meer {
+
+    font-family: arial;
+    display: inline-flex;
+    /* tekst + pijl netjes naast elkaar */
+    align-items: center;
+    /* verticaal centreren */
+    gap: 8px;
+    /* ruimte tussen tekst en pijl */
+    font-size: 20px;
+    text-decoration: none;
+    color: #333467;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    /* animatie bij hover */
+}
+
+.lees-meer:hover {
+    color: #333467;
+
+    /*eerst had ik een oranje accentkleur toegevoegd wat niet werkte kwa color contrast*/
+}
+
+.arrow {
+    font-size: 1.5rem;
+    /* zelfde grootte als tekst */
+    transition: transform 0.2s ease;
+}
+
+.lees-meer:hover .arrow {
+
+    transform: translateX(8px);
+    /* pijl schuift iets naar rechts bij hover */
+}
+
+
+.gridlayout{
+
+     
+
+
+    @media(min-width: 678px ) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    }
+
+    }
+
+
+
+
+
+.laatsteNieuws {
     padding-left: 30px;
-    background-color: #F9C19D;
-    height: 500px;
+    background-color: var(--paarsBlauw);
+    height: 730px;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 30px;
+
+    @media(min-width: 678px){
+        grid-column-start:1 ;
+        grid-column-end: 5;
+        grid-row-start:1 ;
+        grid-row-end: 2;
+    }
+
+}
+
+.nieuwe_look_section {
+    padding-left: 30px;
+    background-color: #F9C19D;
+    height: 670px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    
+    @media(min-width:678px){
+
+        grid-column-start: 5;
+        grid-column-end: -1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
 
 
 }
@@ -186,20 +293,21 @@
     background-color: var(--luchtBlauw);
     padding-left: 30px;
 
-    height: 500px;
+    height: 700px;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: 30px;
+
+     @media(min-width:678px){
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
 }
 
-.laatsteNieuws {
-    padding-left: 30px;
-    background-color: var(--paarsBlauw);
-    height: 730px;
-    margin-left: 30px;
-    margin-right: 30px;
 
-}
 
 .wolkje1 {
     display: none;
@@ -220,6 +328,12 @@
 
     width: 240px;
     height: 160px;
+
+    @media(min-width:678){
+
+        width: 400px;
+        height: 280px;
+    }
 }
 
 
@@ -237,6 +351,13 @@
     padding-right: 30px;
     padding-top: 40px;
     font-family: Arial, Helvetica, sans-serif;
+     @media(min-width:678px){
+
+        grid-column-start: 3;
+        grid-column-end: -1;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
 
 
 
