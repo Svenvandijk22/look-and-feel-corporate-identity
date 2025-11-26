@@ -1,411 +1,483 @@
+body {
+  margin: 0;
+}
+
 .navigatie {
-    display: flex;
-    background-color: #B4BDD0;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
-    height: 150px;
-    align-items: center;
+  display: flex;
+  background-color: #b4bdd0;
+  margin: 30px 50px;
+  border: 2px solid #dee3ed;
+ 
 
+  /* margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px; */
+  /* height: 150px; */
 
+  @media (min-width: 678px) {
+    margin: 50px 60px;
+    position: relative;
+    overflow: hidden;
+    contain: layout;
+  }
 }
 
 .logo {
-    width: 110px;
-    height: 50px;
-    margin-bottom: 40px;
-    margin-left: 20px;
-
+  width: 110px;
+  height: 50px;
+  margin-bottom: 40px;
+  padding-left: 80px;
+  z-index: 0;
 }
 
 .linksNav {
-    display: flex;
+  display: flex;
+  z-index: 1;
 
-    flex-direction: column;
+  flex-direction: column;
 }
-
-
 
 #menuToggle {
-    display: none;
+  display: none;
 }
 
-
 .hamburger {
-    width: 30px;
-    cursor: pointer;
-    display: block;
-    margin: 10px;
+  width: 30px;
+  cursor: pointer;
+  display: block;
+  margin: 10px;
+  padding-top: 50px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .hamburger div {
-    height: 4px;
-    margin: 6px 0;
-    background: black;
+  height: 4px;
+  margin: 6px 0;
+  background: black;
 }
 
-
-
-#menuToggle:checked~ul {
-    display: block;
+#menuToggle:checked ~ ul {
+  display: block;
 }
-
 
 .navigatie ul {
-    display: none;
-    list-style-type: none;
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    background-color: #B4BDD0;
+
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 70px;
+  }
 }
-
-
 
 .navigatie a {
-
-    text-decoration: none;
-    margin-left: 170px;
-    color: #333467;
-}
-
-
-.labelOost {
-    background: #8da24a;
-    color: white;
-    padding: 7px 19px;
-    font-size: 19px;
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-right: 50px;
+  text-decoration: none;
+  margin-left: 170px;
+  color: #333467;
 
 }
 
-.locatie-label-oost {
-
-    margin-top: 10px;
-    font-family: Arial;
-    background-color: #8EA34B;
-    color: #333467;
-    text-transform: lowercase;
-    font-size: 20px;
-    font-weight: 550;
-    padding: 4px 12px;
-    /* Binnenruimte */
-    border-radius: 2px;
-    display: inline-block;
-    margin-right: 8px;
-    /* Ruimte tussen label en titeltekst */
-    vertical-align: middle;
-    /* Lijnt netjes uit naast de titel */
+@keyframes wolk {
+  100% {
+    left: 100%;
+  }
 }
 
-.locatie-label-Zuid-oost {
+.wolkje {
+  position: absolute;
+  left: -80px;
 
-    margin-top: 10px;
-    font-family: Arial;
-    background-color: #085B64;
-    color: white;
-    text-transform: lowercase;
-    font-size: 20px;
-    font-weight: 200;
-    padding: 4px 12px;
-    /* Binnenruimte */
-    border-radius: 2px;
-    /* Kleine hoekafronding */
-    display: inline-block;
-    /* Zorgt dat het blokje de juiste maat heeft */
-    margin-right: 8px;
-    /* Ruimte tussen label en titeltekst */
-    vertical-align: middle;
-    /* Lijnt netjes uit naast de titel */
+  width: 80px;
+  height: 40px;
+
+  animation-name: wolk;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  z-index: -10;
+
+  
+
+  pointer-events: none;
+
+  .navigatie:hover & {
+    animation-play-state: running;
+  }
 }
-
-
-.koptekst {
-    color: white;
-    font-size: 30px;
-    padding-top: 20px;
-}
-
-
-.koptekst2 {
-    color: var(--paarsBlauw);
-    font-size: 30px;
-    padding-top: 20px;
-
-
-}
-
-.koptekst3 {
-    color: white;
-    font-size: 25px;
-
-}
-
-.tekst {
-    color: white;
-    font-size: 15px;
-    line-height: 1.4rem;
-
-}
-
-.tekstPaarsblauw {
-
-    color: var(--paarsBlauw);
-    font-size: 15px;
-    line-height: 1.4rem;
-}
-
-.lees-meer_wit {
-
-    font-family: arial;
-    display: inline-flex;
-    /* tekst + pijl netjes naast elkaar */
-    align-items: center;
-    /* verticaal centreren */
-    gap: 8px;
-    /* ruimte tussen tekst en pijl */
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.2s ease;
-    /* animatie bij hover */
-}
-
-.lees-meer_wit:hover {
-    color: white;
-
-    /*eerst had ik een oranje accentkleur toegevoegd wat niet werkte kwa color contrast*/
-}
-
-.arrow2 {
-    font-size: 1.5rem;
-    /* zelfde grootte als tekst */
-    transition: transform 0.2s ease;
-}
-
-.lees-meer_wit:hover .arrow2 {
-
-    transform: translateX(8px);
-    /* pijl schuift iets naar rechts bij hover */
-}
-
-
-
-.lees-meer {
-
-    font-family: arial;
-    display: inline-flex;
-    /* tekst + pijl netjes naast elkaar */
-    align-items: center;
-    /* verticaal centreren */
-    gap: 8px;
-    /* ruimte tussen tekst en pijl */
-    font-size: 20px;
-    text-decoration: none;
-    color: #333467;
-    font-weight: bold;
-    transition: color 0.2s ease;
-    /* animatie bij hover */
-}
-
-.lees-meer:hover {
-    color: #333467;
-
-    /*eerst had ik een oranje accentkleur toegevoegd wat niet werkte kwa color contrast*/
-}
-
-.arrow {
-    font-size: 1.5rem;
-    /* zelfde grootte als tekst */
-    transition: transform 0.2s ease;
-}
-
-.lees-meer:hover .arrow {
-
-    transform: translateX(8px);
-    /* pijl schuift iets naar rechts bij hover */
-}
-
-
-.gridlayout{
-
-     
-
-
-    @media(min-width: 678px ) {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
-    }
-
-    }
-
-
-
-
-
-.laatsteNieuws {
-    padding-left: 30px;
-    background-color: var(--paarsBlauw);
-    height: 730px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
-
-    @media(min-width: 678px){
-        grid-column-start:1 ;
-        grid-column-end: 5;
-        grid-row-start:1 ;
-        grid-row-end: 2;
-    }
-
-}
-
-.nieuwe_look_section {
-    padding-left: 30px;
-    background-color: #F9C19D;
-    height: 670px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
-    
-    @media(min-width:678px){
-
-        grid-column-start: 5;
-        grid-column-end: -1;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-
-
-}
-
-
-
-.section_3 {
-
-    background-color: var(--luchtBlauw);
-    padding-left: 30px;
-
-    height: 700px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
-
-     @media(min-width:678px){
-
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 4;
-    }
-}
-
-
 
 .wolkje1 {
-    display: none;
-
-
-    width: 80px;
-    height: 40px;
+  top: 20px;
+  animation-duration: 20s;
+  animation-delay: -4s;
 }
 
 .wolkje2 {
-    display: none;
+  top: 60px;
+  animation-duration: 29s;
+  animation-delay: -26s;
+}
 
-    width: 80px;
-    height: 40px;
+.labelOost {
+  background: #8da24a;
+  color: white;
+  padding: 7px 19px;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 50px;
+}
+
+.locatie-label-oost {
+  margin-top: 10px;
+  font-family: Arial;
+  background-color: #8ea34b;
+  color: #333467;
+  text-transform: lowercase;
+  font-size: 20px;
+  font-weight: 550;
+  padding: 4px 12px;
+  /* Binnenruimte */
+  border-radius: 2px;
+  display: inline-block;
+  margin-right: 8px;
+  /* Ruimte tussen label en titeltekst */
+  vertical-align: middle;
+  /* Lijnt netjes uit naast de titel */
+}
+
+.locatie-label-Zuid-oost {
+  margin-top: 10px;
+  font-family: Arial;
+  background-color: #085b64;
+  color: white;
+  text-transform: lowercase;
+  font-size: 20px;
+  font-weight: 200;
+  padding: 4px 12px;
+  /* Binnenruimte */
+  border-radius: 2px;
+  /* Kleine hoekafronding */
+  display: inline-block;
+  /* Zorgt dat het blokje de juiste maat heeft */
+  margin-right: 8px;
+  /* Ruimte tussen label en titeltekst */
+  vertical-align: middle;
+  /* Lijnt netjes uit naast de titel */
+}
+
+.koptekst {
+  color: white;
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+@media (min-width: 678px) {
+  .koptekst {
+    color: white;
+    font-size: 55px;
+    padding-top: 20px;
+  }
+}
+
+.koptekst2 {
+  color: var(--paarsBlauw);
+  font-size: 30px;
+  padding-top: 20px;
+}
+
+.koptekst3 {
+  color: white;
+  font-size: 25px;
+}
+
+.tekst {
+  color: white;
+  font-size: 18px;
+  line-height: 1.4rem;
+}
+
+@media (min-width: 678px) {
+  .tekst {
+    color: white;
+    width: 650px;
+  }
+}
+
+.tekstPaarsblauw {
+  color: var(--paarsBlauw);
+  font-size: 18px;
+  line-height: 1.4rem;
+}
+
+@media (min-width: 678px) {
+  .tekstPaarsblauw {
+    color: var(--paarsBlauw);
+    width: 500px;
+  }
+}
+
+.lees-meer_wit {
+  font-family: arial;
+  display: inline-flex;
+  /* tekst + pijl netjes naast elkaar */
+  align-items: center;
+  /* verticaal centreren */
+  gap: 8px;
+  /* ruimte tussen tekst en pijl */
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.2s ease;
+  /* animatie bij hover */
+}
+
+.lees-meer_wit:hover {
+  color: white;
+
+  /*eerst had ik een oranje accentkleur toegevoegd wat niet werkte kwa color contrast*/
+}
+
+.arrow2 {
+  font-size: 1.5rem;
+  /* zelfde grootte als tekst */
+  transition: transform 0.2s ease;
+}
+
+.lees-meer_wit:hover .arrow2 {
+  transform: translateX(8px);
+  /* pijl schuift iets naar rechts bij hover */
+}
+
+.lees-meer {
+  font-family: arial;
+  display: inline-flex;
+  /* tekst + pijl netjes naast elkaar */
+  align-items: center;
+  /* verticaal centreren */
+  gap: 8px;
+  /* ruimte tussen tekst en pijl */
+  font-size: 20px;
+  text-decoration: none;
+  color: #333467;
+  font-weight: bold;
+  transition: color 0.2s ease;
+  /* animatie bij hover */
+}
+
+.lees-meer:hover {
+  color: #333467;
+
+  /*eerst had ik een oranje accentkleur toegevoegd wat niet werkte kwa color contrast*/
+}
+
+.arrow {
+  font-size: 1.5rem;
+  /* zelfde grootte als tekst */
+  transition: transform 0.2s ease;
+}
+
+.lees-meer:hover .arrow {
+  transform: translateX(8px);
+  /* pijl schuift iets naar rechts bij hover */
+}
+
+.gridlayout {
+  @media (min-width: 678px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.filterDoelgroep {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  font-family: arial;
+  background-color: var(--torenOranje);
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @media (min-width: 678px) {
+    margin-left: 50px;
+  }
+}
+
+.icon {
+  width: 25px;
+  height: 20px;
+}
+
+.laatsteNieuws {
+  padding-left: 30px;
+  background-color: var(--paarsBlauw);
+  height: 920px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  border-radius: 10px;
+  border: 1px solid #dee3ed;
+
+  @media (min-width: 678px) {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-left: 50px;
+    margin-right: 20px;
+  }
+}
+
+.nieuwe_look_section {
+  padding-left: 30px;
+  background-color: #f9c19d;
+  height: 730px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  border-radius: 10px;
+  border: 1px solid #dee3ed;
+
+  @media (min-width: 678px) {
+    grid-column-start: 5;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-left: 20px;
+    margin-right: 50px;
+  }
+}
+
+.section_3 {
+  background-color: var(--luchtBlauw);
+  padding-left: 30px;
+  border: 1px solid #dee3ed;
+
+  height: 700px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 50px;
+  border-radius: 10px;
+
+  @media (min-width: 678px) {
+    display: flex;
+    height: 500px;
+
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.RechtsFlexSection3 {
+  @media (min-width: 678px) {
+    margin-left: 20px;
+    margin-top: 110px;
+  }
 }
 
 .nieuwe_look {
-
-    width: 240px;
-    height: 160px;
-
-    @media(min-width:678){
-
-        width: 400px;
-        height: 280px;
-    }
+  width: 240px;
+  height: 160px;
 }
 
+@media (min-width: 678px) {
+  .nieuwe_look {
+    width: 500px;
+    height: 340px;
+  }
+}
+
+.laatste-nieuws-afbeelding {
+  width: 240px;
+  height: 160px;
+}
+
+@media (min-width: 678px) {
+  .laatste-nieuws-afbeelding {
+    width: 700px;
+    height: 430px;
+  }
+}
 
 /*code nieuwsbrief*/
 
-
-
 .nieuwsbrief {
+  background-color: #333467;
+  height: 300px;
+  width: fit-content;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
 
-
-    background-color: #333467;
-    height: 300px;
-    width: fit-content;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-     @media(min-width:678px){
-
-        grid-column-start: 3;
-        grid-column-end: -1;
-        grid-row-start: 3;
-        grid-row-end: 4;
-    }
-
-
-
+  @media (min-width: 678px) {
+    grid-column-start: 3;
+    grid-column-end: -1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
 }
 
 .titel-nieuwsbrief {
-    color: white;
-    font-style: italic;
-    font-size: 35px;
+  color: white;
+  font-style: italic;
+  font-size: 35px;
 }
 
 .textlabel {
-    flex-direction: column;
-    color: white;
-    display: flex;
-    gap: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+  flex-direction: column;
+  color: white;
+  display: flex;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .textinput {
-
-
-    border-radius: 30px;
-    border-color: white;
-    border-style: solid;
-    padding-left: 10px;
-    font-size: 16px;
+  border-radius: 30px;
+  border-color: white;
+  border-style: solid;
+  padding-left: 10px;
+  font-size: 16px;
 }
 
 .buttonlabel {
-    gap: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .button_form {
+  margin-top: 20px;
+  border-radius: 30px;
+  border-color: #ea5b0c;
+  border-style: solid;
+  color: white;
+  font-size: 16px;
+  background-color: var(--torenOranje);
 
-    margin-top: 20px;
-    border-radius: 30px;
-    border-color: #EA5B0C;
-    border-style: solid;
-    color: white;
-    font-size: 16px;
-    background-color: var(--torenOranje);
-
-
-    &:hover {
-        background-color: white;
-        color: #333467;
-    }
-
+  &:hover {
+    background-color: white;
+    color: #333467;
+  }
 }
